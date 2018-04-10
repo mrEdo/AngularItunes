@@ -1,0 +1,14 @@
+<input type="text" placeholder="Search for an artist" #searchInput>
+<button (click)="getMusic(searchInput.value)">Search</button>
+
+
+
+<ul>
+	<span *ngIf="loading"> <img src="https://loading.io/spinners/pies/index.pie-chart-loading-gif.gif" alt=""> </span>
+	<li *ngFor="let song of data">
+		<h1>{{ song.artistName }}</h1>
+		<h3><a href="{{ song.trackViewUrl }}">{{ song.trackName }}</a></h3>
+		<img src="{{ song.artworkUrl60 }}" alt="">
+	</li>
+</ul>
+
